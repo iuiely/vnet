@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+defined('VNET_BIN_ROOT') or define('VNET_BIN_ROOT',realpath(dirname(__DIR__)).DIRECTORY_SEPARATOR);
+
+$frame_config_file = VNET_BIN_ROOT.'frame/config/set.php';
+
+if(file_exists($frame_config_file)){
+    $config = require $frame_config_file;
+}else{
+   die("include file http.config.php failed\n");
+}
+
+array_shift($argv);
+
+if(isset($argv[1]) && ($argv[1] == '-d' ||$argv[1] =='-D')){
+    $config['api']['set']['daemonize'] = 1;
+}
+if(isset($argv[0]) && $argv[0] != ''){
+    $config['command']=$argv[0];
+}else{
+    $config['command']='help';
+}
+//print_r($config);
+
+require VNET_BIN_ROOT.'frame/http.php';
+\http::run($config);
