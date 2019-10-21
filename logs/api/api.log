@@ -1,0 +1,26 @@
+array(3) {
+  ["classname"]=>
+  string(24) "\api\controller\Networks"
+  ["action"]=>
+  string(3) "add"
+  ["param"]=>
+  NULL
+}
+array(3) {
+  ["classname"]=>
+  string(23) "\api\controller\Subnets"
+  ["action"]=>
+  string(3) "add"
+  ["param"]=>
+  NULL
+}
+array(3) {
+  ["classname"]=>
+  string(23) "\api\controller\Subnets"
+  ["action"]=>
+  string(3) "add"
+  ["param"]=>
+  NULL
+}
+[2019-10-21 19:20:43 #5058.4]	INFO	Server is shutdown now
+shutdown
