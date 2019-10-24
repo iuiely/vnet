@@ -106,7 +106,7 @@ class Vlan_network{
     public function check_tap_nic($ifname,$dhcpnamespace){
         if(!empty($ifname)){
             $check_tap = iplib()->get_device($ifname,$dhcpnamespace);
-            if($check_tap[0]){
+            if($check_tap[0]===0){
                 return true;
             }else{
                 return false;
